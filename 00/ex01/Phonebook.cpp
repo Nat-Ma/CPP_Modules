@@ -1,17 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:16:40 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/03/22 16:43:23 by natalierauh      ###   ########.fr       */
+/*   Updated: 2025/03/24 11:12:36 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
 #include "Contact.hpp"
 #include "Phonebook.hpp"
 
@@ -36,7 +34,7 @@ using namespace std;
 // if text longer than column last char with a dot
 // EXIT: quit, contact lost forever!
 
-void	add_contact(PhoneBook pb)
+void	add_contact(PhoneBook& pb)
 {
 	string 	first;
 	string 	last;
@@ -50,27 +48,27 @@ void	add_contact(PhoneBook pb)
 	{
 		if (x == 0)
 		{
-			std::cout << "Type your first name: " << std::endl;
+			std::cout << BLUE << BOLD << "Type your first name: " << RESET << std::endl;
 			std::cin >> first;
 		}
 		else if (x == 1)
 		{
-			std::cout << "Type your last name: " << std::endl;
+			std::cout << BLUE << BOLD << "Type your last name: " << RESET << std::endl;
 			std::cin >> last;
 		}
 		else if (x == 2)
 		{
-			std::cout << "Type your nick name: " << std::endl;
+			std::cout << BLUE << BOLD << "Type your nick name: " << RESET << std::endl;
 			std::cin >> nick;
 		}
 		else if (x == 3)
 		{
-			std::cout << "Type your phone number: " << std::endl;
+			std::cout << BLUE << BOLD << "Type your phone number: " << RESET << std::endl;
 			std::cin >> p_nr;
 		}
 		else if (x == 4)
 		{
-			std::cout << "Type your darkest secret: " << std::endl;
+			std::cout << BLUE << BOLD << "Type your darkest secret: " << RESET << std::endl;
 			std::cin >> secret;
 		}
 		x++;
@@ -82,16 +80,29 @@ void	add_contact(PhoneBook pb)
 int	main(void)
 {
 	string	input;
+	int		contact_size;
 
-	// need to initialize the phonebook
 	PhoneBook pb;
-	std::cout << "What do you want to do?" << std::endl;
+	std::cout << BOLD << YELLOW << "What do you want to do?" << RESET << std::endl;
 	std::cin >> input;
-	if (input.compare("ADD") == 0)
-		add_contact(pb);
-	else if (input.compare("SEARCH") == 0)
-		std::cout << "Search the Phonebook" << std::endl;
-	else if (input.compare("EXIT") == 0)
-		return (1);
+	while (input.compare("EXIT") != 0)
+	{
+		if (input.compare("ADD") == 0)
+			add_contact(pb);
+		else if (input.compare("SEARCH") == 0)
+		{
+			contact_size = pb.getContactList();
+			if (contact_size)
+			{
+				std::cout << YELLOW << BOLD << "Choose a contact" << RESET << std::endl;
+				std::cin >> input;
+				pb.getContact(atoi(input.c_str()));
+			}
+		}
+		else
+			std::cout << RED << "Please enter a valdid prompt" << RESET << std::endl;
+		std::cout << BOLD << YELLOW << "What do you want to do?" << RESET << std::endl;
+		std::cin >> input;
+	}
 	return (1);
 }
