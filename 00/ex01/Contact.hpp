@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 14:44:43 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/03/24 10:14:58 by natalierauh      ###   ########.fr       */
+/*   Updated: 2025/03/27 14:46:23 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,20 @@
 #include <string>
 #include <iomanip>
 
-using namespace std;
-
 class Contact {
 	public:
-		Contact(string first = "", string last = "",string nick = "", string p_nr = "", string secret = "")
-		{
-			firstname = first;
-			lastname = last;
-			nickname = nick;
-			phone_nr = p_nr;
-			darkest_secret = secret;
-		}
-		~Contact() {};
-		string getFirstname(void) {
-			return firstname;
-		}
-		string getLastname(void) {
-			return lastname;
-		}
-		string getNickname(void) {
-			return nickname;
-		}
-		string getPhoneNumber(void) {
-			return phone_nr;
-		}
-		string getSecret(void) {
-			return darkest_secret;
-		}
+		Contact(std::string first = "", std::string last = "",std::string nick = "", std::string p_nr = "", std::string secret = "");
+		~Contact();
+		std::string getFirstname(void);
+		std::string getLastname(void);
+		std::string getNickname(void);
+		std::string getPhoneNumber(void);
+		std::string getSecret(void);
 
 	private:
-		string firstname;
-		string lastname;
-		string nickname;
-		string phone_nr;
-		string darkest_secret;
+		std::string _firstname;
+		std::string _lastname;
+		std::string _nickname;
+		std::string _phoneNr;
+		std::string _darkestSecret;
 };

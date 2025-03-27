@@ -6,7 +6,7 @@
 #    By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 15:06:40 by natalierauh       #+#    #+#              #
-#    Updated: 2025/03/24 11:10:41 by natalierauh      ###   ########.fr        #
+#    Updated: 2025/03/25 16:54:54 by natalierauh      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RM = rm -rf
 
 NAME = pb
 
-SRC = Phonebook.cpp Contact.cpp
+SRC = Phonebook.cpp Contact.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

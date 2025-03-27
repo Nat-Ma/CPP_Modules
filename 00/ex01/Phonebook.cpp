@@ -6,103 +6,76 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:16:40 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/03/24 11:12:36 by natalierauh      ###   ########.fr       */
+/*   Updated: 2025/03/27 14:47:39 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include "Phonebook.hpp"
 
-using namespace std;
-// Class PhoneBook -> Instances
-// Array of contacts
-// 8 Contacts, 9th overwrites oldest (first)
-// NO DYNAMIC ALLOC
-// Class Contact -> Instances
-// anything inside a class is private
-// anything outside is public
-// on program start PB is empty
-// -> user prompted to enter ONE of THREE cmds
-// ADD, SEARCH, EXIT
-// ADD: Prompt to input info of new contact, 1 field at a time
-// -> All fields completed, add to PB
-// Fields: First name, last name, nickname, phone nr, darkest secret
-// Cannot have empty fields...
-// SEARCH: display specific contact
-// display as 4 cols, index, first name, last name, nickname
-// each col 10 chars wide separated by | text right aligned
-// if text longer than column last char with a dot
-// EXIT: quit, contact lost forever!
+PhoneBook::PhoneBook() {
+	_count = 0;
+	_max = 0;
+};
 
-void	add_contact(PhoneBook& pb)
+PhoneBook::~PhoneBook() {};
+
+void	printStr(std::string str)
 {
-	string 	first;
-	string 	last;
-	string 	nick;
-	string 	p_nr;
-	string 	secret;
-	int		x;
-
-	x = 0;
-	while (x < 5)
+	if (str.size() > 9)
 	{
-		if (x == 0)
-		{
-			std::cout << BLUE << BOLD << "Type your first name: " << RESET << std::endl;
-			std::cin >> first;
-		}
-		else if (x == 1)
-		{
-			std::cout << BLUE << BOLD << "Type your last name: " << RESET << std::endl;
-			std::cin >> last;
-		}
-		else if (x == 2)
-		{
-			std::cout << BLUE << BOLD << "Type your nick name: " << RESET << std::endl;
-			std::cin >> nick;
-		}
-		else if (x == 3)
-		{
-			std::cout << BLUE << BOLD << "Type your phone number: " << RESET << std::endl;
-			std::cin >> p_nr;
-		}
-		else if (x == 4)
-		{
-			std::cout << BLUE << BOLD << "Type your darkest secret: " << RESET << std::endl;
-			std::cin >> secret;
-		}
-		x++;
+		str = str.substr(0, 9);
+		std::cout << str << ".|";
 	}
-	Contact new_contact(first, last, nick, p_nr, secret);
-	pb.setContact(new_contact);
+	else
+		std::cout << std::setw(10) << str << "|";
 }
 
-int	main(void)
+void	PhoneBook::setContact(Contact newContact)
 {
-	string	input;
-	int		contact_size;
-
-	PhoneBook pb;
-	std::cout << BOLD << YELLOW << "What do you want to do?" << RESET << std::endl;
-	std::cin >> input;
-	while (input.compare("EXIT") != 0)
+	if (_count == 8)
 	{
-		if (input.compare("ADD") == 0)
-			add_contact(pb);
-		else if (input.compare("SEARCH") == 0)
-		{
-			contact_size = pb.getContactList();
-			if (contact_size)
-			{
-				std::cout << YELLOW << BOLD << "Choose a contact" << RESET << std::endl;
-				std::cin >> input;
-				pb.getContact(atoi(input.c_str()));
-			}
-		}
-		else
-			std::cout << RED << "Please enter a valdid prompt" << RESET << std::endl;
-		std::cout << BOLD << YELLOW << "What do you want to do?" << RESET << std::endl;
-		std::cin >> input;
+		_count = 0;
+		_max = 8;
 	}
-	return (1);
+	contacts[_count] = newContact;
+	_count++;
+};
+
+int	PhoneBook::getContactList(void)
+{
+	_index = 0;
+	if (_count == 0)
+	{
+		std::cout << RED << "Sorry, you need to add a contact first." << RESET << std::endl;
+		return 0;
+	}
+	std::cout << BOLD << BLUE << std::setw(11) << "_index|" << RESET;
+	std::cout << BOLD << BLUE << std::setw(11) << "_firstname|" << RESET;
+	std::cout << BOLD << BLUE << std::setw(11) << "_lastname|" << RESET;
+	std::cout << BOLD << BLUE << std::setw(11) << "_nickname|" << RESET << std::endl;
+	while (_index < _max || _index < _count)
+	{
+		std::cout << std::setw(10) << _index << "|";
+		printStr(contacts[_index].getFirstname());
+		printStr(contacts[_index].getLastname());
+		printStr(contacts[_index].getNickname());
+		std::cout << std::endl;
+		_index++;
+	}
+	return _index;
+};
+
+void	PhoneBook::getContact(int targetIndex)
+{
+	if (targetIndex < 0 || targetIndex >= _count)
+	{
+		std::cout << RED << "Sorry, a contact with this index does not exist." << RESET << std::endl;
+		return ;
+	}
+	std::cout << GREEN << contacts[targetIndex].getFirstname() << RESET << std::endl;
+	std::cout << GREEN << contacts[targetIndex].getLastname() << RESET << std::endl;
+	std::cout << GREEN << contacts[targetIndex].getNickname() << RESET << std::endl;
+	std::cout << GREEN << contacts[targetIndex].getPhoneNumber() << RESET << std::endl;
+	std::cout << GREEN << contacts[targetIndex].getSecret() << RESET << std::endl;
 }
