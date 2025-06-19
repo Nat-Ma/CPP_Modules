@@ -1,0 +1,3 @@
+Hello this should be REPLACEd, it is the first line
+and the second line REPLACE this
+and the third one...
