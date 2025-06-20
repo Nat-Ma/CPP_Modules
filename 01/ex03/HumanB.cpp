@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 09:33:21 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/05/31 10:11:09 by natalierauh      ###   ########.fr       */
+/*   Updated: 2025/06/20 16:55:07 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name): name(name), weapon(nullptr) {};
+HumanB::HumanB(std::string name): name(name), weapon(0) {};
 
 HumanB::HumanB(std::string name, Weapon &weapon)
     : name(name), weapon(&weapon) {

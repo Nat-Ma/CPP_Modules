@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 08:53:16 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/05/31 10:11:23 by natalierauh      ###   ########.fr       */
+/*   Updated: 2025/06/20 17:00:23 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Weapon::~Weapon() {
 	std::cout << "----- Weapon destroyed.. -----" << std::endl;
 }
 
-std::string	Weapon::getType() const {
+const std::string&	Weapon::getType() const {
 	return (this->type);
 }
 
