@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:29:42 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/02/20 18:42:01 by natalierauh      ###   ########.fr       */
+/*   Updated: 2025/06/20 16:19:03 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
