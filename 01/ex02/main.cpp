@@ -3,16 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 15:53:53 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/05/30 16:05:00 by natalierauh      ###   ########.fr       */
+/*   Updated: 2025/06/20 16:54:02 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
 
+// ref vs pointer
+// ref: is an alias not a copy, cannot be reassigned, cannot be NULL
+// use -> avoid copies safely, modify the argument
+// pointer: can be NULL, alloc/dealloc memory, reassigning
 int	main(void) {
 	std::string	str = "HI THIS IS BRAIN";
 	std::string	*strPtr = &str;
