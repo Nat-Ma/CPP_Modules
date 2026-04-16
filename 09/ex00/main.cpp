@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 17:59:49 by natalierauh       #+#    #+#             */
-/*   Updated: 2026/03/05 17:30:30 by natalierauh      ###   ########.fr       */
+/*   Created: 2026/03/06 16:12:41 by natalierauh       #+#    #+#             */
+/*   Updated: 2026/03/06 16:19:19 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <string>
+#include "BitcoinExchange.hpp"
 
-Zombie* zombieHorde(int N, std::string name)
-{
-	int		i;
-	Zombie*	horde;
-
-	if (N <= 0)
-		return nullptr;
-	horde = new Zombie[N];
-	i = 0;
-	while (i < N)
-		horde[i++].setName(name);
-	return (horde);
+int	main(int argc, char *argv[]) {
+	if (argc != 3) {
+		std::cout << "Wrong nr of args!" << std::endl;
+		return 1;
+	}
+	return 0;
 }

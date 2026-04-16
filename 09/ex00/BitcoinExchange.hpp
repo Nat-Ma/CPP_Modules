@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 17:59:49 by natalierauh       #+#    #+#             */
-/*   Updated: 2026/03/05 17:30:30 by natalierauh      ###   ########.fr       */
+/*   Created: 2026/03/06 16:10:47 by natalierauh       #+#    #+#             */
+/*   Updated: 2026/03/06 16:21:05 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <string>
+#pragma once
+#include <iostream>
 
-Zombie* zombieHorde(int N, std::string name)
-{
-	int		i;
-	Zombie*	horde;
+class BitcoinExchange {
+	private:
+		
 
-	if (N <= 0)
-		return nullptr;
-	horde = new Zombie[N];
-	i = 0;
-	while (i < N)
-		horde[i++].setName(name);
-	return (horde);
-}
+	public:
+		BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange &other);
+		BitcoinExchange &operator=(const BitcoinExchange &other);
+		~BitcoinExchange();
+
+		void	openCSV(std::string filename);
+};

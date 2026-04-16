@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/24 17:59:49 by natalierauh       #+#    #+#             */
-/*   Updated: 2026/03/05 17:30:30 by natalierauh      ###   ########.fr       */
+/*   Created: 2026/02/27 17:11:16 by natalierauh       #+#    #+#             */
+/*   Updated: 2026/02/27 18:02:09 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <string>
+#pragma once
 
-Zombie* zombieHorde(int N, std::string name)
-{
-	int		i;
-	Zombie*	horde;
+// why is the virtual destructor needed?
+// dynamic_cast only works on polymorphic dlasses
+// -> a class becomes polymorphic when it has at least one virtual fn
+class Base {
+	public:
+		virtual ~Base();
+};
 
-	if (N <= 0)
-		return nullptr;
-	horde = new Zombie[N];
-	i = 0;
-	while (i < N)
-		horde[i++].setName(name);
-	return (horde);
-}
+Base *generate(void);
+void identify(Base *p);
+void identify(Base &p);
