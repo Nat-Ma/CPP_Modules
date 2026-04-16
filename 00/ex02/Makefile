@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+         #
+#    By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/25 15:29:07 by natalierauh       #+#    #+#              #
-#    Updated: 2025/03/25 15:38:58 by natalierauh      ###   ########.fr        #
+#    Updated: 2025/06/20 16:09:11 by nrauh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

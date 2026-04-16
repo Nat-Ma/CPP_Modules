@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 08:53:18 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/06/20 16:58:51 by nrauh            ###   ########.fr       */
+/*   Created: 2025/08/01 15:34:14 by nrauh             #+#    #+#             */
+/*   Updated: 2025/08/01 15:36:53 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
+#include <iostream>
 
-// const means the fn cannot modify the values
-// has to return a const ref so that the caller cannot modify the value
-class	Weapon {
-	public:
-		const std::string&	getType(void) const;
-		void				setType(std::string type);
-
-		Weapon(std::string type);
-		~Weapon();
+class Brain {
 	private:
-		std::string	type;
+		std::string	ideas[100];
+
+	public:
+		Brain();
+		Brain(const Brain &other);
+		Brain &operator=(const Brain &other);
+		~Brain();
 };

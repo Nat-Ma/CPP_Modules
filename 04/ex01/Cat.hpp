@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 08:53:18 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/06/20 16:58:51 by nrauh            ###   ########.fr       */
+/*   Created: 2025/08/01 14:11:10 by nrauh             #+#    #+#             */
+/*   Updated: 2025/08/01 16:04:31 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
+#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-// const means the fn cannot modify the values
-// has to return a const ref so that the caller cannot modify the value
-class	Weapon {
-	public:
-		const std::string&	getType(void) const;
-		void				setType(std::string type);
-
-		Weapon(std::string type);
-		~Weapon();
+class Cat: public Animal {
 	private:
-		std::string	type;
+		Brain	*brain;
+
+	public:
+		Cat();
+		~Cat();
+
+		void	makeSound(void) const;
 };

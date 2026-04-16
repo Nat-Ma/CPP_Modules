@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 08:53:18 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/06/20 16:58:51 by nrauh            ###   ########.fr       */
+/*   Created: 2025/06/26 14:25:33 by nrauh             #+#    #+#             */
+/*   Updated: 2025/07/25 16:12:19 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <string>
+#include "Fixed.hpp"
+#include <iostream>
 
-// const means the fn cannot modify the values
-// has to return a const ref so that the caller cannot modify the value
-class	Weapon {
-	public:
-		const std::string&	getType(void) const;
-		void				setType(std::string type);
+int main( void ) {
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
 
-		Weapon(std::string type);
-		~Weapon();
-	private:
-		std::string	type;
-};
+	std::cout << b << std::endl;
+	
+	std::cout << Fixed::max( a, b ) << std::endl;
+	
+	return 0;
+}

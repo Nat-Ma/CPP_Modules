@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 08:53:16 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/06/20 17:00:23 by nrauh            ###   ########.fr       */
+/*   Created: 2025/07/31 14:37:13 by nrauh             #+#    #+#             */
+/*   Updated: 2025/08/01 16:29:55 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
-#include "Weapon.hpp"
+#include "ClapTrap.hpp"
 
-Weapon::Weapon(std::string type) {
-	this->type = type;
-	std::cout << "----- Weapon created.. -----" << std::endl;
-}
+int	main(void)
+{
+	ClapTrap	Curtis("🐶");
+	ClapTrap	Klara("🦂");
+	std::cout << std::endl;
 
-Weapon::~Weapon() {
-	std::cout << "----- Weapon destroyed.. -----" << std::endl;
-}
+	Curtis.attack("🦂");
+	Klara.takeDamage(4);
+	Klara.beRepaired(1);
+	Klara.attack("🐶");
+	Curtis.takeDamage(4);
+	Klara.attack("🐶");
+	Curtis.takeDamage(4);
+	Curtis.attack("🦂");
+	Klara.takeDamage(4);
+	Curtis.takeDamage(4);
+	Klara.attack("🐶");
+	Klara.attack("🐶");
 
-const std::string&	Weapon::getType() const {
-	return (this->type);
-}
-
-void	Weapon::setType(std::string type) {
-	this->type = type;
+	return (0);
 }

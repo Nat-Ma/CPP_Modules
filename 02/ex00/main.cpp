@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 08:53:18 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/06/20 16:58:51 by nrauh            ###   ########.fr       */
+/*   Created: 2025/06/26 14:25:33 by nrauh             #+#    #+#             */
+/*   Updated: 2025/07/25 11:39:55 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include <string>
+#include "Fixed.hpp"
 
-// const means the fn cannot modify the values
-// has to return a const ref so that the caller cannot modify the value
-class	Weapon {
-	public:
-		const std::string&	getType(void) const;
-		void				setType(std::string type);
-
-		Weapon(std::string type);
-		~Weapon();
-	private:
-		std::string	type;
-};
+int main( void ) {
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	
+	c = b;
+	
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	
+	return (0);
+}

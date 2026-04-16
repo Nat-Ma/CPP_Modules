@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:16:40 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/03/27 14:45:30 by natalierauh      ###   ########.fr       */
+/*   Updated: 2025/06/20 16:28:37 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,11 @@ void	add_contact(PhoneBook& pb)
 int	main(void)
 {
 	std::string	input;
-	int		contact_size;
+	int			contact_size;
 
 	PhoneBook pb;
 	std::cout << BOLD << YELLOW << "What do you want to do?" << RESET << std::endl;
+	std::cout << "[OPTIONS: ADD, SEARCH, EXIT]" << std::endl;
 	std::cin >> input;
 	while (input.compare("EXIT") != 0)
 	{
@@ -87,6 +88,7 @@ int	main(void)
 		else
 			std::cout << RED << "Please enter a valdid prompt" << RESET << std::endl;
 		std::cout << BOLD << YELLOW << "What do you want to do?" << RESET << std::endl;
+		std::cout << "[OPTIONS: ADD, SEARCH, EXIT]" << std::endl;
 		std::cin >> input;
 	}
 	return (1);

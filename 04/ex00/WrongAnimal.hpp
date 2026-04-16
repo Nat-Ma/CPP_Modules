@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/31 08:53:18 by natalierauh       #+#    #+#             */
-/*   Updated: 2025/06/20 16:58:51 by nrauh            ###   ########.fr       */
+/*   Created: 2025/08/01 15:17:20 by nrauh             #+#    #+#             */
+/*   Updated: 2025/08/01 15:23:52 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
+#include <iostream>
 
-// const means the fn cannot modify the values
-// has to return a const ref so that the caller cannot modify the value
-class	Weapon {
-	public:
-		const std::string&	getType(void) const;
-		void				setType(std::string type);
-
-		Weapon(std::string type);
-		~Weapon();
-	private:
+class WrongAnimal {
+	protected:
 		std::string	type;
+
+	public:
+	WrongAnimal();
+	WrongAnimal(const WrongAnimal &other);
+	WrongAnimal &operator=(const WrongAnimal &other);
+	virtual ~WrongAnimal();
+
+	std::string	getType(void) const;
+	void		makeSound(void) const;
 };
