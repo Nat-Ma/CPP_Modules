@@ -6,7 +6,7 @@
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 18:16:59 by nrauh             #+#    #+#             */
-/*   Updated: 2026/04/16 18:23:27 by nrauh            ###   ########.fr       */
+/*   Updated: 2026/04/17 15:20:15 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 // deswegen ist dies nicht in einer separaten .cpp file
 template <typename T>
 void swap(T &x, T &y) {
-	T tmp;
-	tmp = x;
+	T tmp(x);
 	x = y;
 	y = tmp;
 };

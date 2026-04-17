@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 10:38:32 by natalierauh       #+#    #+#             */
-/*   Updated: 2026/03/05 17:30:53 by natalierauh      ###   ########.fr       */
+/*   Updated: 2026/04/17 15:54:01 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,9 @@ template <typename T>
 Array<T>::Array(const unsigned int n): n(n) {
 	// creates an array of n elements
 	if (this->n > 0)
-		this->a = new T[n]();
+		this->a = new T[n](); // with () fills int with 0 and calls default constructor of classes
 	else
 		this->a = NULL;
-	for (unsigned int i = 0; i < n; i++) {
-		std::cout << a[i];
-		if (i < n - 1)
-			std::cout << ", ";
-	}
 	std::cout << std::endl;
 };
 

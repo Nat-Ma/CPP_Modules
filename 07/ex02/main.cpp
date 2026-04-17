@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 10:33:46 by natalierauh       #+#    #+#             */
-/*   Updated: 2026/03/02 13:16:40 by natalierauh      ###   ########.fr       */
+/*   Updated: 2026/04/17 15:50:41 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main(void) {
 	try {
+		Array<int> empty;
         Array<int> original(5);
         original[0] = 100;
 
@@ -22,7 +23,6 @@ int	main(void) {
 
         std::cout << "Original[0]: " << original[0] << " (sollte 100 sein)" << std::endl;
         std::cout << "Kopie[0]: " << kopie[0] << " (sollte 42 sein)" << std::endl;
-
         // Test Out of Bounds
         std::cout << original[10] << std::endl;
     }

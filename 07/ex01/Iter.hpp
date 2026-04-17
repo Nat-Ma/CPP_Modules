@@ -6,7 +6,7 @@
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 22:39:03 by natalierauh       #+#    #+#             */
-/*   Updated: 2026/04/16 18:50:08 by nrauh            ###   ########.fr       */
+/*   Updated: 2026/04/17 15:34:41 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ size_t getLen(L &arr) {
 }
 
 template <typename T>
-void printEl(T &x) { 
+void printEl(const T &x) { 
 	std::cout << x << " ";
 }
