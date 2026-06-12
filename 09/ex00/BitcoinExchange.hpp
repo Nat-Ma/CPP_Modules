@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 16:10:47 by natalierauh       #+#    #+#             */
-/*   Updated: 2026/05/10 18:32:44 by natalierauh      ###   ########.fr       */
+/*   Updated: 2026/06/12 10:36:56 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 class BitcoinExchange {
 	private:
-		std::map<std::string, float> data;
+		std::map<std::string, double> data;
 		bool isValidDate(const std::string& date) const;
-		bool isValidValue(const std::string& value, float& n) const;
+		bool isValidValue(const std::string& value, double& n) const;
 
 	public:
 		BitcoinExchange();
