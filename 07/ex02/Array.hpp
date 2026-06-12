@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 10:33:55 by natalierauh       #+#    #+#             */
-/*   Updated: 2026/03/02 12:50:48 by natalierauh      ###   ########.fr       */
+/*   Updated: 2026/04/17 15:40:35 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <array>
 #include <iostream>
 #include <stdexcept>
 

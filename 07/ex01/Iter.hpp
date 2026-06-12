@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 22:39:03 by natalierauh       #+#    #+#             */
-/*   Updated: 2026/03/02 10:30:44 by natalierauh      ###   ########.fr       */
+/*   Updated: 2026/04/17 15:34:41 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 
 template <typename I, typename F>
 void iter(I *arr, const size_t len, F fn) {
-	for (size_t i = 0; i < len; i++) {
+	for (size_t i = 0; i < len; i++)
 		fn(arr[i]);
-		std::cout << fn(arr[i]);
-		if (i < len - 1)
-			std::cout << ", ";
-	}
-	std::cout << std::endl;
 }
 
 // need to pass the array by reference
@@ -28,4 +23,9 @@ void iter(I *arr, const size_t len, F fn) {
 template <typename L>
 size_t getLen(L &arr) {
 	return sizeof(arr) / sizeof(arr[0]);
+}
+
+template <typename T>
+void printEl(const T &x) { 
+	std::cout << x << " ";
 }
